@@ -1,0 +1,47 @@
+nelmio_api_doc:
+    documentation:
+        info:
+            title: Product Catalog API
+            description: RESTful API for managing products with Symfony and Onion Architecture
+            version: 1.0.0
+        servers:
+            - url: http://localhost:8000
+              description: Development server
+        components:
+            schemas:
+                Product:
+                    type: object
+                    required: [name, description, price, stock]
+                    properties:
+                        id:
+                            type: integer
+                            example: 1
+                        name:
+                            type: string
+                            example: Laptop
+                        description:
+                            type: string
+                            example: High-performance laptop
+                        price:
+                            type: number
+                            format: float
+                            example: 999.99
+                        stock:
+                            type: integer
+                            example: 50
+                        createdAt:
+                            type: string
+                            format: date-time
+                            example: "2025-12-03 12:00:00"
+                        updatedAt:
+                            type: string
+                            format: date-time
+                            example: "2025-12-03 12:00:00"
+            securitySchemes:
+                bearerAuth:
+                    type: http
+                    scheme: bearer
+                    bearerFormat: JWT
+    areas: # to filter documented areas
+        path_patterns:
+            - ^/api(?!/doc$) # Accepts routes under /api except /api/doc

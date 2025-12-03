@@ -1,0 +1,30 @@
+framework:
+    secret: '%env(APP_SECRET)%'
+    http_method_override: false
+    handle_all_throwables: true
+    php_errors:
+        log: true
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    # Make classes in src/ available to be used as services
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/Domain/Entity/'
+            - '../src/Kernel.php'
+
+    # Repository binding
+    App\Domain\Repository\ProductRepositoryInterface:
+        alias: App\Infrastructure\Persistence\Doctrine\Repository\DoctrineProductRepository
+    
+    App\Domain\Repository\UserRepositoryInterface:
+        alias: App\Infrastructure\Persistence\Doctrine\Repository\DoctrineUserRepository
+
+    # Controllers
+    App\Infrastructure\Controller\:
+        resource: '../src/Infrastructure/Controller/'
+        tags: ['controller.service_arguments']
