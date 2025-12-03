@@ -8,6 +8,8 @@ This project uses **[DocFX](https://dotnet.github.io/docfx/)** for documentation
 
 ### View Documentation
 
+**🌐 Online**: [https://marians20.github.io/php-react-product-catalog/](https://marians20.github.io/php-react-product-catalog/)
+
 **Option 1: Build and View Locally**
 
 1. Install DocFX:
