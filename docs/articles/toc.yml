@@ -1,0 +1,12 @@
+- name: Quick Start
+  href: quickstart.md
+- name: API Reference
+  href: api-reference.md
+- name: Documentation Guide
+  href: documentation-guide.md
+- name: Architecture
+  href: architecture.md
+- name: Security & RBAC
+  href: security.md
+- name: Deployment
+  href: deployment.md

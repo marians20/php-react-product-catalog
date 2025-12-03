@@ -1,0 +1,27 @@
+# DocFX build output
+docs/_site/
+docs/obj/
+docs/log/
+
+# Backend (Symfony)
+backend/var/
+backend/vendor/
+backend/.env.local
+backend/.env.*.local
+backend/config/jwt/*.pem
+
+# Frontend (React)
+frontend/node_modules/
+frontend/build/
+frontend/.env.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
